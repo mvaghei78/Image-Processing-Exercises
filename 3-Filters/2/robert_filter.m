@@ -1,0 +1,11 @@
+img = imread("E:\Dars\Masters\digital image processing\Homeworks\Images\3\Elaine.bmp");
+robert1 = [1 0; 0 -1];
+robert2 = [0 1; -1 0];
+fig = figure;
+subplot(1,3,1); imshow(img); title("Original Image");
+a = conv2(img,robert1,"same");
+imwrite(uint8(a),'apply_robert2.bmp');
+subplot(1,3,2); imshow(uint8(a)); title("filter [1 0; 0 -1]");
+b = conv2(img,robert2,"same");
+imwrite(uint8(b),'apply_robert1.bmp');
+subplot(1,3,3); imshow(uint8(b)); title("filter [0 1; -1 0]");

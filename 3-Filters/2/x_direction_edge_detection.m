@@ -1,0 +1,15 @@
+img = imread("E:\Dars\Masters\digital image processing\Homeworks\Images\3\Elaine.bmp");
+filter_a = [1 0 -1]./2;
+filter_b = [1 0 -1; 1 0 -1; 1 0 -1]./6;
+filter_c = [1 0 -1; 2 0 -2; 1 0 -1]./8;
+fig = figure;
+subplot(2,2,1); imshow(img); title("Original Image");
+a = conv2(img,filter_a,"same");
+imwrite(uint8(a),'apply_filter_a.bmp');
+subplot(2,2,2); imshow(uint8(a)); title("filter [1 0 -1]./2");
+b = conv2(img,filter_b,"same");
+imwrite(uint8(b),'apply_filter_b.bmp');
+subplot(2,2,3); imshow(uint8(b)); title("filter [1 0 -1; 1 0 -1; 1 0 -1]./6");
+c = conv2(img,filter_c,"same");
+imwrite(uint8(c),'apply_filter_c.bmp');
+subplot(2,2,4); imshow(uint8(c)); title("filter [1 0 -1; 2 0 -2; 1 0 -1]./8");
